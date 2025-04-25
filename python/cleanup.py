@@ -2,6 +2,7 @@
 import os
 import argparse
 
+
 def delete_logs(directory):
     deleted = []
     for root, dirs, files in os.walk(directory):
@@ -21,9 +22,10 @@ def delete_logs(directory):
     else:
         print("No .log files found to delete.")
 
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Delete .log files in directory")
+    parser = argparse.ArgumentParser(
+        description="Delete .log files in directory")
     parser.add_argument("directory", help="Path to directory to clean up")
     args = parser.parse_args()
     delete_logs(args.directory)
-
